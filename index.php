@@ -40,8 +40,8 @@ try {
     echo "\nPayment Status: " . $cancel->status;
 } catch (MPApiException $ex)  {
     echo "\nStatus code: " . $ex->getStatusCode();
-    echo "\nApi Response: \n";
-    var_dump($ex->getApiResponse());
+    echo "\nContent: \n";
+    var_dump($ex->getApiResponse()->getContent());
 } catch (Exception $ex) {
     echo $ex;
 }
